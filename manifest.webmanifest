@@ -1,0 +1,3 @@
+{ "name": "Plot", "short_name": "Plot", "start_url": ".", "display": "standalone",
+  "background_color": "#f6f5f0", "theme_color": "#2f6b3a",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }] }

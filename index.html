@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Plot 2026</title>
+  <meta name="theme-color" content="#2f6b3a">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Plot <span id="dateLabel"></span></h1>
+    <button id="refresh" title="Refresh forecast" aria-label="Refresh forecast">↻</button>
+  </header>
+
+  <main>
+    <section id="tab-today" class="tab"></section>
+    <section id="tab-plot" class="tab" hidden></section>
+    <section id="tab-calendar" class="tab" hidden></section>
+    <section id="tab-log" class="tab" hidden></section>
+  </main>
+
+  <nav>
+    <button data-tab="today" class="on">Today</button>
+    <button data-tab="plot">Plot</button>
+    <button data-tab="calendar">Calendar</button>
+    <button data-tab="log">Log</button>
+  </nav>
+
+  <dialog id="bedDialog">
+    <form method="dialog" id="bedForm">
+      <h2 id="bedTitle"></h2>
+      <p class="muted" id="bedSub"></p>
+      <div id="bedChecks"></div>
+      <div class="row">
+        <button value="cancel" class="plain">Cancel</button>
+        <button type="button" id="bedReset" class="plain">Reset to rotation</button>
+        <button value="save" id="bedSave">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="crops.js"></script>
+  <script src="logic.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
