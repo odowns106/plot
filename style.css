@@ -1,6 +1,6 @@
 :root {
   --bg: #f6f5f0; --surface: #fff; --text: #1d2a20; --muted: #667267; --line: #dfddd2;
-  --accent: #2f6b3a; --accent-text: #fff;
+  --accent: #2f6b3a; --accent-text: #fff; --plant: #7a5ca8;
   --go: #2f6b3a; --go-bg: #e3f1e5; --wait: #9a5b00; --wait-bg: #fcefd6;
   --soon: #4a5b78; --soon-bg: #e6ebf4; --frost: #b3261e; --frost-bg: #fbe4e1;
   --brassica: #7fb685; --potato: #d9b779; --allium: #b79ad0; --root: #c9758f;
@@ -9,7 +9,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #141a15; --surface: #1d261f; --text: #e8ece6; --muted: #98a499; --line: #324034;
-    --accent: #6fbf7c; --accent-text: #0e1a10;
+    --accent: #6fbf7c; --accent-text: #0e1a10; --plant: #b79ad0;
     --go: #7fd18c; --go-bg: #1f3a25; --wait: #f0b562; --wait-bg: #3d2f14;
     --soon: #a9b9d6; --soon-bg: #25304a; --frost: #ff9a90; --frost-bg: #432220;
     --brassica: #4f8a58; --potato: #a8863f; --allium: #7d5f98; --root: #a04c66;
@@ -80,6 +80,7 @@ details > summary { cursor: pointer; color: var(--muted); padding: 6px 0; }
   background: repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px calc(100% / 12)); }
 .cal .seg { position: absolute; top: 2px; bottom: 2px; border-radius: 4px; background: var(--accent); opacity: .85; }
 .cal .seg.harvest { background: var(--cucurbit); }
+.cal .seg.plant { background: var(--plant); }
 .cal .seg.care { background: var(--soon); }
 .cal .today { position: absolute; top: -2px; bottom: -2px; width: 2px; background: var(--frost); }
 

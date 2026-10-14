@@ -163,14 +163,16 @@
     const segs = (t) => (wraps(t) ? [[pos(t.from), 100], [0, pos(t.to) + 100 / 12 / 31]]
       : [[pos(t.from), pos(t.to) + 100 / 12 / 31]]);
     const nowPos = pos([today.getMonth() + 1, today.getDate()]);
-    let html = '<div class="cal"><div class="months"><div></div><div>' + MONTHS.map((m) => `<span>${m[0]}</span>`).join('') + '</div></div>';
+    let html = `<p class="legend"><span><i style="background:var(--accent)"></i>Sow</span><span><i style="background:var(--plant)"></i>Plant out</span>
+      <span><i style="background:var(--soon)"></i>Jobs</span><span><i style="background:var(--cucurbit)"></i>Harvest</span></p>` +
+      '<div class="cal"><div class="months"><div></div><div>' + MONTHS.map((m) => `<span>${m[0]}</span>`).join('') + '</div></div>';
     for (const crop of Object.keys(CROPS)) {
       const ts = TASKS.filter((t) => t.crop === crop);
       if (!ts.length) continue;
       html += `<div class="crop">${cropName(crop)}</div>`;
       for (const t of ts) {
         html += `<div class="bar"><span>${t.verb}</span><div class="track">` +
-          segs(t).map(([a, b]) => `<div class="seg ${kindOf(t)}" style="left:${a}%;width:${b - a}%"></div>`).join('') +
+          segs(t).map(([a, b]) => `<div class="seg ${/^Plant/.test(t.verb) ? 'plant' : kindOf(t)}" style="left:${a}%;width:${b - a}%"></div>`).join('') +
           `<div class="today" style="left:${nowPos}%"></div></div></div>`;
       }
     }
